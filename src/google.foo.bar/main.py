@@ -1,10 +1,9 @@
-import level2
+from level3.find_the_access_codes import solution
 
 
 def print_hi(name):
-    print(solution(5, 10))
-    print(solution(3, 2))
-    print(solution(1000000, 100000))
+    print(solution([1, 2, 3, 4, 5, 6]))
+
 
 
 # Press the green button in the gutter to run the script.

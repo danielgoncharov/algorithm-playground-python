@@ -1,1 +1,0 @@
-from bunny_worker_locations import solution
