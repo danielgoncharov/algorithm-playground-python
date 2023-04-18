@@ -1,53 +1,35 @@
-from collections import deque
-
-
 def solution(maze):
-    min_path = bfs(maze)
-    rows, cols = get_dim(maze)
-    for i in range(rows):
-        for j in range(cols):
-            if maze[i][j] == 1:
-                maze[i][j] = 0
-                min_path = min(min_path, bfs(maze))
-                maze[i][j] = 1
-    return min_path
+    height, width = get_dim(maze)
+    top_to_bottom_path = find_shortest_path(0, 0, maze)
+    bottom_to_top_path = find_shortest_path(height - 1, width - 1, maze)
 
-
-def bfs(maze):
-    graph = to_graph(maze)
-    visited = set()
-    start = (0, 0)
-    rows, cols = get_dim(maze)
-    end = (rows - 1, cols - 1)
-    queue = deque([(start, [])])
-    while queue:
-        node, path = queue.popleft()
-        if node == end:
-            return len(path)+1
-        visited.add(node)
-        for neighbor in graph[node]:
-            if neighbor not in visited:
-                queue.append((neighbor, path + [neighbor]))
-    return None
+    ans = 2 ** 32 - 1
+    for i in range(height):
+        for j in range(width):
+            if top_to_bottom_path[i][j] and bottom_to_top_path[i][j]:
+                ans = min(top_to_bottom_path[i][j] + bottom_to_top_path[i][j] - 1, ans)
+    return ans
 
 
 def get_dim(maze):
     return len(maze), len(maze[0])
 
 
-def to_graph(maze):
-    rows, cols = get_dim(maze)
-    graph = {}
-    for i in range(rows):
-        for j in range(cols):
-            neighbors = []
-            if i > 0 and not (maze[i][j] == 1 and maze[i - 1][j] == 1):
-                neighbors.append((i - 1, j))
-            if i < rows - 1 and not (maze[i][j] == 1 and maze[i + 1][j] == 1):
-                neighbors.append((i + 1, j))
-            if j > 0 and not (maze[i][j] == 1 and maze[i][j - 1] == 1):
-                neighbors.append((i, j - 1))
-            if j < cols - 1 and not (maze[i][j] == 1 and maze[i][j + 1] == 1):
-                neighbors.append((i, j + 1))
-            graph[(i, j)] = neighbors
-    return graph
+def find_shortest_path(start_x, start_y, maze):
+    height, width = get_dim(maze)
+    board = [[None for _ in range(width)] for _ in range(height)]
+    board[start_x][start_y] = 1
+
+    array = [(start_x, start_y)]
+    while array:
+        x, y = array.pop(0)
+        for (x_increment, y_increment) in [(1, 0), (-1, 0), (0, -1), (0, 1)]:
+            new_x, new_y = x + x_increment, y + y_increment
+            if 0 <= new_x < height and 0 <= new_y < width:
+                if board[new_x][new_y] is None:
+                    board[new_x][new_y] = board[x][y] + 1
+                    if maze[new_x][new_y] == 1:
+                        continue
+                    array.append((new_x, new_y))
+
+    return board
