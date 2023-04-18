@@ -12,10 +12,10 @@ def solution(maze):
         if current_node.is_exit_pod():
             return distance_map[current_node]
 
-        for child_node in current_node.neighbors():
-            if child_node not in distance_map.keys():
-                distance_map[child_node] = distance_map[current_node] + 1
-                queue.append(child_node)
+        for neighbor in current_node.neighbors():
+            if neighbor not in distance_map.keys():
+                distance_map[neighbor] = distance_map[current_node] + 1
+                queue.append(neighbor)
 
     return None
 
