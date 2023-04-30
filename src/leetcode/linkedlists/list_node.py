@@ -8,8 +8,8 @@ class ListNode:
         node = self
         while node is not None:
             if result is None:
-                result = str(self.val)
+                result = str(node.val)
             else:
-                result += ", " + str(self.val)
+                result += " ," + str(node.val)
             node = node.next
         return result[::-1]
