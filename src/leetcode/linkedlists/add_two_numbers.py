@@ -12,7 +12,7 @@ class Solution:
         previous_digit = None
         carry_over = 0
         answer = None
-        while first_number is not None and second_number is not None:
+        while first_number is not None or second_number is not None:
             if first_number is None:
                 current_sum = second_number.val
                 second_number = second_number.next
@@ -32,4 +32,7 @@ class Solution:
             else:
                 previous_digit.next = current_digit
             previous_digit = current_digit
+
+        if carry_over == 1:
+            previous_digit.next = ListNode(carry_over)
         return answer
