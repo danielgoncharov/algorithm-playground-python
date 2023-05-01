@@ -3,3 +3,6 @@ class TreeNode:
         self.val = val
         self.left = left
         self.right = right
+
+    def __str__(self):
+        str(self.val)

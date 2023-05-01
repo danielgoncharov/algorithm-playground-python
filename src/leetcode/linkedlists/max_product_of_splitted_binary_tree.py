@@ -30,7 +30,7 @@ class Solution:
                 )
                 items_deque.append(item.right)
 
-        return max_product
+        return max_product % (10 ** 9 + 7)
 
     def calculate_sums(self, node):
         if node is None:
@@ -38,5 +38,5 @@ class Solution:
         if node.left is None and node.right is None:
             return node.val
 
-        node.val = self.calculate_sums(node.left) + self.calculate_sums(node.right)
+        node.val = node.val + self.calculate_sums(node.left) + self.calculate_sums(node.right)
         return node.val

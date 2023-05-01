@@ -1,11 +1,18 @@
-from src.leetcode.linkedlists.add_two_numbers import Solution
-from src.leetcode.linkedlists.list_node import ListNode
+from src.leetcode.linkedlists.max_product_of_splitted_binary_tree import Solution
+from src.leetcode.linkedlists.tree_node import TreeNode
 
 
 def run():
-    result = Solution().addTwoNumbers(
-        ListNode(9, ListNode(9, ListNode(9))),
-        ListNode(9, ListNode(9, ListNode(9, ListNode(9))))
+    result = Solution().maxProduct(
+        TreeNode(1,
+                 TreeNode(2,
+                          TreeNode(4),
+                          TreeNode(5)
+                          ),
+                 TreeNode(3,
+                          TreeNode(6)
+                          )
+                 )
     )
     print(result)
 
