@@ -1,9 +1,9 @@
 from src.leetcode.top_150.merge_sorted_array import MergeSortedArray
+from src.leetcode.top_150.remove_element import RemoveElement
 
 
 def run():
-    result = [1, 2, 3, 0, 0, 0]
-    MergeSortedArray().merge(result, 3, [2, 5, 6], 3)
+    result = RemoveElement().removeElement([0, 1, 2, 2, 3, 0, 4, 2], 2)
     print(result)
 
 
