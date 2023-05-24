@@ -1,19 +1,9 @@
-from src.leetcode.linkedlists.max_product_of_splitted_binary_tree import Solution
-from src.leetcode.linkedlists.tree_node import TreeNode
+from src.leetcode.top_150.merge_sorted_array import MergeSortedArray
 
 
 def run():
-    result = Solution().maxProduct(
-        TreeNode(1,
-                 TreeNode(2,
-                          TreeNode(4),
-                          TreeNode(5)
-                          ),
-                 TreeNode(3,
-                          TreeNode(6)
-                          )
-                 )
-    )
+    result = [1, 2, 3, 0, 0, 0]
+    MergeSortedArray().merge(result, 3, [2, 5, 6], 3)
     print(result)
 
 
