@@ -1,9 +1,8 @@
-from src.leetcode.top_150.merge_sorted_array import MergeSortedArray
-from src.leetcode.top_150.remove_element import RemoveElement
+from src.leetcode.top_150.jump_game import JumpGame
 
 
 def run():
-    result = RemoveElement().removeElement([0, 1, 2, 2, 3, 0, 4, 2], 2)
+    result = JumpGame().jump([2, 1])
     print(result)
 
 
