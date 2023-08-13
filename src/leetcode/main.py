@@ -1,8 +1,8 @@
-from src.leetcode.top_150.jump_game import JumpGame
+from src.leetcode.top_150.h_index import HIndex
 
 
 def run():
-    result = JumpGame().jump([2, 1])
+    result = HIndex().hIndex([3,0,6,1,5])
     print(result)
 
 
