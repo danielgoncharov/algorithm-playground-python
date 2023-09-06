@@ -1,8 +1,8 @@
-from src.leetcode.top_150.h_index import HIndex
+from src.leetcode.top_150.gas_station import GasStation
 
 
 def run():
-    result = HIndex().hIndex([3,0,6,1,5])
+    result = GasStation().canCompleteCircuit([2], [2])
     print(result)
 
 
