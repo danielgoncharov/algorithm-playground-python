@@ -1,9 +1,9 @@
-from src.leetcode.top_150.h_index import HIndex
-from src.leetcode.top_150.product_of_array_except_self import ProductOfArrayExceptSelf
+from src.leetcode.top_150.gas_station import GasStation
+from src.leetcode.top_150.trapping_rain_water import TrappingRainWater
 
 
 def run():
-    result = ProductOfArrayExceptSelf().productExceptSelf([1, 2, 3, 4])
+    result = TrappingRainWater().trap([0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1])
     print(result)
 
 
