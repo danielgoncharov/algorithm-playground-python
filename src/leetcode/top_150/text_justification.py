@@ -11,7 +11,7 @@ class TextJustification:
         for index in range(words_length):
             word = words[index]
             min_spaces = len(line) - 1
-            if line_size + min_spaces + len(word) + 1 < maxWidth:
+            if line_size + min_spaces + len(word) + 1 <= maxWidth:
                 line_size += len(word)
                 line.append(word)
             else:
