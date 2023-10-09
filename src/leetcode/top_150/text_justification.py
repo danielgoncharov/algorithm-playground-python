@@ -36,7 +36,10 @@ class TextJustification:
         spaces_per_word = space_for_spaces // int(words_in_line - 1)
         addition_per_interval = space_for_spaces % int(words_in_line - 1)
         for index in range(1, words_in_line):
-            string += " " * (spaces_per_word + addition_per_interval) + words[index]
+            extra_spaces = 0
+            if addition_per_interval != 0:
+                extra_spaces = 1
+            string += " " * (spaces_per_word + extra_spaces) + words[index]
             if addition_per_interval > 0:
                 addition_per_interval -= 1
         return string
