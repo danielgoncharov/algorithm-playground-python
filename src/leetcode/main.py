@@ -1,13 +1,9 @@
-from src.leetcode.top_150.gas_station import GasStation
-from src.leetcode.top_150.integer_to_roman import IntegerToRoman
-from src.leetcode.top_150.reverse_words_in_a_string import ReverseWordsInAString
-from src.leetcode.top_150.roman_to_integer import RomanToInteger
-from src.leetcode.top_150.trapping_rain_water import TrappingRainWater
+from src.leetcode.top_150.is_subsequence import IsSubsequence
 from src.leetcode.top_150.zigzag_conversion import ZigzagConversion
 
 
 def run():
-    result = ZigzagConversion().convert("PAYPALISHIRING", 3)
+    result = IsSubsequence().isSubsequence("axc", "ahbgdc")
     print(result)
 
 
