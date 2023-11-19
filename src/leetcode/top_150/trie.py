@@ -27,17 +27,17 @@ class Trie:
             node.insert(sufix)
 
     def search(self, word: str) -> bool:
-        self.search_with(word, True)
+        return self.search_with(word, True)
 
     def startsWith(self, prefix: str) -> bool:
-        self.search_with(prefix, False)
+        return self.search_with(prefix, False)
 
     def search_with(self, word: str, check_word):
         nodes = self.nodes
         word_length = len(word)
         for index in range(word_length):
             character = word[index]
-            node = nodes[character]
+            node = nodes.get(character)
             if node is None:
                 return False
             else:
