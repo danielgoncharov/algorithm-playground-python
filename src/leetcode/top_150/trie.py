@@ -3,17 +3,17 @@
 class Trie:
 
     def __init__(self):
+        self.character = None
         self.nodes = dict()
         self.is_word = False
 
-    @character.setter
     def character(self, new_value):
         self.character = new_value
 
     def insert(self, word: str) -> None:
         if len(word) == 0: return None
 
-        node = self.nodes[word[0]]
+        node = self.nodes.get(word[0], None)
         if node is None:
             node = Trie()
             node.character = word[0]
@@ -27,12 +27,12 @@ class Trie:
             node.insert(sufix)
 
     def search(self, word: str) -> bool:
-        self.search(word, True)
+        self.search_with(word, True)
 
     def startsWith(self, prefix: str) -> bool:
-        self.search(prefix, False)
+        self.search_with(prefix, False)
 
-    def search(self, word: str, check_word):
+    def search_with(self, word: str, check_word):
         nodes = self.nodes
         word_length = len(word)
         for index in range(word_length):
