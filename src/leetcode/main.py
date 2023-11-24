@@ -1,9 +1,9 @@
-from src.leetcode.top_150.is_subsequence import IsSubsequence
-from src.leetcode.top_150.zigzag_conversion import ZigzagConversion
+from src.leetcode.top_150.ipo import IPO
 
 
 def run():
-    result = IsSubsequence().isSubsequence("axc", "ahbgdc")
+    result = IPO().findMaximizedCapital(1, 0, [1, 2, 3], [1, 1, 2])
+
     print(result)
 
 
