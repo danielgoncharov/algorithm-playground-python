@@ -17,7 +17,7 @@ def advent3_part1():
                 number += line[column_index]
                 end_num = column_index
             elif start_num and end_num:
-                sum += get_number_to_add(lines, row_index, start_num, end_num, number)
+                sum += get_number_to_add(lines, row_index, start_num, end_num, int(number))
                 start_num = None
                 end_num = None
                 number = ""
