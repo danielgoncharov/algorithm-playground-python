@@ -25,7 +25,7 @@ def advent3_part1():
                 start_num = None
                 end_num = None
                 number = ""
-
+    return sum
 
 def get_number_to_add(
         lines,
