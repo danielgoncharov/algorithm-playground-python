@@ -1,4 +1,4 @@
-from src.leetcode.adventofcode.advent_2 import advent3_part1
+from src.leetcode.adventofcode.advent_3 import advent3_part1
 
 
 def run():
