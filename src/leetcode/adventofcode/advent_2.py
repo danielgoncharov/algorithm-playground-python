@@ -1,5 +1,5 @@
 def advent2_part1():
-    file1 = open('adventofcode/input', 'r')
+    file1 = open('adventofcode/advent_2_input', 'r')
     games = file1.readlines()
 
     target_dict = {
@@ -39,7 +39,7 @@ def advent2_part1():
 
 
 def advent2_part2():
-    file1 = open('adventofcode/input', 'r')
+    file1 = open('adventofcode/advent_2_input', 'r')
     games = file1.readlines()
 
     sum = 0

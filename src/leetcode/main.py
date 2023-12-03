@@ -1,8 +1,8 @@
-from src.leetcode.top_150.ipo import IPO
+from src.leetcode.adventofcode.advent_2 import advent3_part1
 
 
 def run():
-    result = IPO().findMaximizedCapital(1, 0, [1, 2, 3], [1, 1, 2])
+    result = advent3_part1()
 
     print(result)
 
