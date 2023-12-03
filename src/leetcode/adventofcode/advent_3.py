@@ -16,7 +16,7 @@ def advent3_part1():
             elif line[column_index].isdigit():
                 number += line[column_index]
                 end_num = column_index
-            elif start_num and end_num:
+            elif start_num is not None and end_num is not None:
                 sum += get_number_to_add(lines, row_index, start_num, end_num, int(number))
                 start_num = None
                 end_num = None
@@ -35,7 +35,7 @@ def get_number_to_add(
         number
 ) -> int:
     # check top line
-    for column_index in range(column_start - 1, column_end + 1):
+    for column_index in range(column_start - 1, column_end + 2):
         row_index_to_check = row_index - 1
         if column_index < 0 or row_index_to_check < 0 or column_index == len(lines[row_index_to_check]):
             continue
@@ -43,7 +43,7 @@ def get_number_to_add(
             return number
 
     # check bottom line
-    for column_index in range(column_start - 1, column_end + 1):
+    for column_index in range(column_start - 1, column_end + 2):
         row_index_to_check = row_index + 1
         if column_index < 0 or row_index_to_check == len(lines) - 1 or column_index == len(lines[row_index_to_check]):
             continue
