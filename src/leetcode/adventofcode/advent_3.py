@@ -40,7 +40,11 @@ def get_number_to_add(
         row_index_to_check = row_index - 1
         if column_index < 0 or row_index_to_check < 0 or column_index == len(lines[row_index_to_check]):
             continue
-        if not lines[row_index_to_check][column_index].isdigit() and lines[row_index_to_check][column_index] != '.':
+        if (
+                not lines[row_index_to_check][column_index].isdigit() and
+                lines[row_index_to_check][column_index] != '.' and
+                lines[row_index_to_check][column_index] != '\n'
+        ):
             return number
 
     # check bottom line
@@ -48,7 +52,11 @@ def get_number_to_add(
         row_index_to_check = row_index + 1
         if column_index < 0 or row_index_to_check == len(lines) or column_index == len(lines[row_index_to_check]):
             continue
-        if not lines[row_index_to_check][column_index].isdigit() and lines[row_index_to_check][column_index] != '.':
+        if (
+                not lines[row_index_to_check][column_index].isdigit() and
+                lines[row_index_to_check][column_index] != '.' and
+                lines[row_index_to_check][column_index] != '\n'
+        ):
             return number
 
     # check left column
@@ -56,7 +64,11 @@ def get_number_to_add(
         column_index_to_check = column_start - 1
         if row_index < 0 or column_index_to_check < 0 or row_index == len(lines):
             continue
-        if not lines[row_index][column_index_to_check].isdigit() and lines[row_index][column_index_to_check] != '.':
+        if (
+                not lines[row_index][column_index_to_check].isdigit() and
+                lines[row_index][column_index_to_check] != '.' and
+                lines[row_index][column_index_to_check] != '\n'
+        ):
             return number
 
     # check right column
@@ -64,6 +76,10 @@ def get_number_to_add(
         column_index_to_check = column_end + 1
         if row_index < 0 or column_index_to_check < 0 or row_index == len(lines):
             continue
-        if not lines[row_index][column_index_to_check].isdigit() and lines[row_index][column_index_to_check] != '.':
+        if (
+                not lines[row_index][column_index_to_check].isdigit() and
+                lines[row_index][column_index_to_check] != '.' and
+                lines[row_index][column_index_to_check] != '\n'
+        ):
             return number
     return 0
