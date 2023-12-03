@@ -27,6 +27,7 @@ def advent3_part1():
                 number = ""
     return sum
 
+
 def get_number_to_add(
         lines,
         row_index,
