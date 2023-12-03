@@ -45,7 +45,7 @@ def get_number_to_add(
     # check bottom line
     for column_index in range(column_start - 1, column_end + 2):
         row_index_to_check = row_index + 1
-        if column_index < 0 or row_index_to_check == len(lines) - 1 or column_index == len(lines[row_index_to_check]):
+        if column_index < 0 or row_index_to_check == len(lines) or column_index == len(lines[row_index_to_check]):
             continue
         if not lines[row_index_to_check][column_index].isdigit() and lines[row_index_to_check][column_index] != '.':
             return number
