@@ -1,8 +1,8 @@
-from src.leetcode.adventofcode.advent_3 import advent3_part1
+from src.leetcode.top_150.combination_sum import CombinationSum
 
 
 def run():
-    result = advent3_part1()
+    result = CombinationSum().combinationSum([2, 3, 6, 7], 7)
 
     print(result)
 
