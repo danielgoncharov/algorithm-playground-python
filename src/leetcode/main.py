@@ -1,8 +1,10 @@
-from src.leetcode.top_150.combination_sum import CombinationSum
+from src.leetcode.top_150.word_search import WordSearch
 
 
 def run():
-    result = CombinationSum().combinationSum([2, 3, 6, 7], 7)
+    result = WordSearch().findWords(
+        [["o", "a", "a", "n"], ["e", "t", "a", "e"], ["i", "h", "k", "r"], ["i", "f", "l", "v"]],
+        ["oath", "pea", "eat", "rain"])
 
     print(result)
 
