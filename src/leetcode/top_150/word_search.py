@@ -20,16 +20,14 @@ class WordSearch:
                     root,
                     result
                 )
-        return result
+        return list(set(result))
 
     def build_trie(self, words) -> 'Trie':
         root = Trie()
         for word in words:
             current_trie = root
             for character in word:
-                new_trie = Trie()
-                current_trie.set_child(character, new_trie)
-                current_trie = new_trie
+                current_trie = current_trie.add_child(character)
             current_trie.word = word
         return root
 
@@ -45,7 +43,7 @@ class WordSearch:
                 row_index < 0 or
                 row_index == len(board) or
                 column_index < 0 or
-                column_index == len(board) or
+                column_index == len(board[0]) or
                 board[row_index][column_index] == "#" or
                 not trie.has_child_with_character(board[row_index][column_index])
         ):
@@ -72,8 +70,10 @@ class Trie:
     def index(self, character):
         return ord(character) - ord('a')
 
-    def set_child(self, character, trie):
-        self.children[self.index(character)] = trie
+    def add_child(self, character):
+        if self.children[self.index(character)] is None:
+            self.children[self.index(character)] = Trie()
+        return self.children[self.index(character)]
 
     def child_for(self, character):
         return self.children[self.index(character)]
