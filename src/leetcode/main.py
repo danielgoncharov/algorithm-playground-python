@@ -1,11 +1,10 @@
 from src.leetcode.top_150.word_break import WordBreak
-from src.leetcode.top_150.word_search import WordSearch
 
 
 def run():
     result = WordBreak().wordBreak(
-        "applepenapple",
-        ["apple","pen"])
+        "leetcode",
+        ["et", "code"])
 
     print(result)
 
