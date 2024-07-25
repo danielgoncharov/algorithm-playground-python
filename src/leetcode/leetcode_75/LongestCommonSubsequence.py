@@ -4,46 +4,15 @@ class LongestCommonSubsequence:
             text1: str,
             text2: str
     ) -> int:
-        return self.longestSubsequence(
-            0,
-            0,
-            text1,
-            text2,
-            0
-        )
 
-    def longestSubsequence(
-            self,
-            index_t1: int,
-            index_t2: int,
-            text1: str,
-            text2: str,
-            current_len: int
-    ) -> int:
-        if index_t1 == len(text1) or index_t2 == len(text2):
-            return current_len
-        if text1[index_t1] == text2[index_t2]:
-            return self.longestSubsequence(
-                index_t1 + 1,
-                index_t2 + 1,
-                text1,
-                text2,
-                current_len + 1
-            )
-        else:
-            return max(
-                self.longestSubsequence(
-                    index_t1 + 1,
-                    index_t2,
-                    text1,
-                    text2,
-                    current_len
-                ),
-                self.longestSubsequence(
-                    index_t1,
-                    index_t2 + 1,
-                    text1,
-                    text2,
-                    current_len
+        memory_array = [[0 for _ in range(len(text1) + 1)] for _ in range(len(text2) + 1)]
+
+        for i in range(1, len(text2) + 1):
+            for j in range(1, len(text1) + 1):
+                memory_array[i][j] = max(
+                    memory_array[i - 1][j],
+                    memory_array[i][j - 1]
                 )
-            )
+                if text2[i - 1] == text1[j - 1]:
+                    memory_array[i][j] = memory_array[i][j] + 1
+        return memory_array[len(text2)][len(text1)]
