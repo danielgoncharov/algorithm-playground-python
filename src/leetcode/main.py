@@ -1,10 +1,11 @@
+from src.leetcode.leetcode_75.CombinationSum import CombinationSum
 from src.leetcode.leetcode_75.LongestCommonSubsequence import LongestCommonSubsequence
 
 
 def run():
-    result = LongestCommonSubsequence().longestCommonSubsequence(
-        "abcde",
-        "ace"
+    result = CombinationSum().combinationSum3(
+        3,
+        9
     )
 
     print(result)
