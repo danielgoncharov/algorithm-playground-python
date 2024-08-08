@@ -29,7 +29,7 @@ class CombinationSum:
             current_sum,
             items_in_combinations
     ):
-        for i in range(index, 9):
+        for i in range(index, 10):
             if current_sum - i > 0 and items_in_combinations > 1:
                 self.collect_combination(
                     i + 1,

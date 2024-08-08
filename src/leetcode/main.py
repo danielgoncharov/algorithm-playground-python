@@ -4,8 +4,8 @@ from src.leetcode.leetcode_75.LongestCommonSubsequence import LongestCommonSubse
 
 def run():
     result = CombinationSum().combinationSum3(
-        3,
-        9
+        9,
+        45
     )
 
     print(result)
