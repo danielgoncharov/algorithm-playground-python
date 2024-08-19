@@ -1,12 +1,10 @@
 from src.leetcode.leetcode_75.CombinationSum import CombinationSum
 from src.leetcode.leetcode_75.LongestCommonSubsequence import LongestCommonSubsequence
+from src.leetcode.leetcode_75.tribonacci_number import TribonacciNumber
 
 
 def run():
-    result = CombinationSum().combinationSum3(
-        9,
-        45
-    )
+    result = TribonacciNumber().tribonacci(4)
 
     print(result)
 
