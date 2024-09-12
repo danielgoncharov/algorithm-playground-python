@@ -1,11 +1,12 @@
 from src.leetcode.leetcode_75.CombinationSum import CombinationSum
 from src.leetcode.leetcode_75.LongestCommonSubsequence import LongestCommonSubsequence
 from src.leetcode.leetcode_75.find_pivot_index import FindPivotIndex
+from src.leetcode.leetcode_75.house_robber import HouseRobber
 from src.leetcode.leetcode_75.tribonacci_number import TribonacciNumber
 
 
 def run():
-    result = FindPivotIndex().pivotIndex([1,7,3,6,5,6])
+    result = HouseRobber().rob([2,1,1,2])
 
     print(result)
 
