@@ -6,7 +6,7 @@ from src.leetcode.leetcode_75.tribonacci_number import TribonacciNumber
 
 
 def run():
-    result = HouseRobber().rob([2,1,1,2])
+    result = HouseRobber().rob([2,7,9,3,1])
 
     print(result)
 
