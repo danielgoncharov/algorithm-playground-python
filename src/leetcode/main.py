@@ -1,6 +1,7 @@
 from src.leetcode.leetcode_75.combination_sum import CombinationSum
 from src.leetcode.leetcode_75.LongestCommonSubsequence import LongestCommonSubsequence
 from src.leetcode.leetcode_75.counting_bits import CountingBits
+from src.leetcode.leetcode_75.delete_the_middle_node_of_a__linked_list import DeleteTheMiddleNodeOfALinkedList
 from src.leetcode.leetcode_75.find_pivot_index import FindPivotIndex
 from src.leetcode.leetcode_75.house_robber import HouseRobber
 from src.leetcode.leetcode_75.koko_eating_bananas import KokoEatingBananas
@@ -9,7 +10,7 @@ from src.leetcode.leetcode_75.tribonacci_number import TribonacciNumber
 
 
 def run():
-    result = KokoEatingBananas().minEatingSpeed([30,11,23,4,20], 5)
+    result = DeleteTheMiddleNodeOfALinkedList().deleteMiddle([30,11,23,4,20], 5)
     print(result)
 
 
