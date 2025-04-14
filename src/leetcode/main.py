@@ -7,10 +7,11 @@ from src.leetcode.leetcode_75.house_robber import HouseRobber
 from src.leetcode.leetcode_75.koko_eating_bananas import KokoEatingBananas
 from src.leetcode.leetcode_75.removing_stars_from_a_string import RemovingStarsFromAString
 from src.leetcode.leetcode_75.tribonacci_number import TribonacciNumber
+from src.leetcode.leetcode_75.unique_number_of_occurrences import UniqueNumberOfOccurrences
 
 
 def run():
-    result = DeleteTheMiddleNodeOfALinkedList().deleteMiddle([30,11,23,4,20], 5)
+    result = UniqueNumberOfOccurrences().uniqueOccurrences([1,2])
     print(result)
 
 
