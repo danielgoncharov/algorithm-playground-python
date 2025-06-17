@@ -18,7 +18,7 @@ class BinaryTreeRightSideVie:
             last_element_index = len(result_with_index) - 1
             (last_value, last_level) = result_with_index[last_element_index]
             if current_level == last_level:
-                result_with_index.insert(last_element_index, (current_node.val, current_level))
+                result_with_index[last_element_index] = (current_node.val, current_level)
             else:
                 result_with_index.append((current_node.val, current_level))
             processing_dequeue.append(
