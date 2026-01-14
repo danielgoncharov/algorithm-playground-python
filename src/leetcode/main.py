@@ -1,9 +1,13 @@
-from src.leetcode.leetcode_75.binary_tree_right_side_view import BinaryTreeRightSideVie
+from src.leetcode.leetcode_75.online_stock_span import StockSpanner
 
 
 def run():
-    result = BinaryTreeRightSideVie().rightSideView([1,2])
-    print(result)
+    stock_spanner = StockSpanner()
+    print(stock_spanner.next(31))
+    print(stock_spanner.next(41))
+    print(stock_spanner.next(48))
+    print(stock_spanner.next(59))
+    print(stock_spanner.next(79))
 
 
 if __name__ == "__main__":
