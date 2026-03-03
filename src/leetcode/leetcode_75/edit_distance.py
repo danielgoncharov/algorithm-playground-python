@@ -10,10 +10,13 @@ class EditDistance:
             word1: str,
             word2: str
     ) -> int:
+        if word1_index == len(word1) and word2_index == len(word2):
+            return 0
         if word1_index == len(word1):
-            return 0
+            return len(word2) - word2_index
         if word2_index == len(word2):
-            return 0
+            return len(word1) - word1_index
+
         return min(
             self.find_min_distance(word1_index + 1, word2_index + 1, word1, word2),
             self.find_min_distance(word1_index, word2_index + 1, word1, word2),
